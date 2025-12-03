@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#0f172a" />
+
+  <title>Vidhana — Modern Static Site</title>
+  <meta name="description" content="Vidhana — clean, responsive starter site. Use this index.html as a simple GitHub Pages-ready homepage." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Vidhana — Modern Static Site" />
+  <meta property="og:description" content="A clean, responsive starter homepage ready for GitHub Pages." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fallback favicon -->
+  <link rel="icon" href="/favicon.ico" />
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#0f172a;
+      --muted:#aab3c5;
+      --accent1:#7c3aed; /* purple */
+      --accent2:#06b6d4; /* cyan */
+      --glass: rgba(255,255,255,0.04);
+      --maxw:1100px;
+      color-scheme: dark;
+    }
+    /* Reset-ish */
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,'Helvetica Neue',Arial}
+    body{background:linear-gradient(180deg,var(--bg),#071028 140%);color:#e6eef8;line-height:1.45;-webkit-font-smoothing:antialiased;padding:24px}
+
+    .container{max-width:var(--maxw);margin:0 auto;padding:28px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent1),var(--accent2));font-weight:700}
+    .brand h1{font-size:1.05rem;margin:0}
+    nav{display:flex;gap:14px;align-items:center}
+    a.btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:8px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-weight:600}
+    a.btn.primary{background:linear-gradient(90deg,var(--accent1),var(--accent2));color:white;border:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:32px;align-items:center;margin-top:36px}
+    .hero .copy h2{font-size:2.2rem;margin:0 0 12px}
+    .lead{color:var(--muted);max-width:56ch}
+
+    .card{background:var(--card);padding:18px;border-radius:14px;box-shadow:0 6px 18px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+
+    /* Feature grid */
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:26px}
+    .feature h3{margin:0 0 8px}
+    .feature p{margin:0;color:var(--muted)}
+
+    /* Footer */
+    footer{margin-top:40px;color:var(--muted);font-size:0.95rem;display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      .hero .card{order:2}
+      nav{display:none}
+    }
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .kbd{background:var(--glass);padding:6px 8px;border-radius:6px;font-weight:600}
+
+    /* subtle animated accent */
+    .accent-ring{position:relative;padding:1px;border-radius:12px}
+    .accent-ring::after{content:"";position:absolute;inset:-2px;border-radius:14px;background:linear-gradient(60deg,rgba(124,58,237,0.06),rgba(6,182,212,0.06));z-index:-1;filter:blur(20px);opacity:0.9}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">V</div>
+        <div>
+          <h1>Vidhana</h1>
+          <div class="muted" style="font-size:0.85rem;margin-top:2px">Simple static starter • GitHub Pages ready</div>
+        </div>
+      </div>
+
+      <nav aria-label="Primary navigation">
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="#features">Features</a>
+        <a class="btn" href="#contact">Contact</a>
+        <a class="btn primary" href="#get-started">Get Started</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="copy">
+          <h2>Build, publish, and iterate — fast.</h2>
+          <p class="lead">A minimal, modern static site template you can push to <span class="kbd">username.github.io</span> (or this repo) and have live on GitHub Pages. Replace text and assets to make it your own.</p>
+
+          <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+            <a class="btn primary" id="get-started" href="#contact">Deploy to Pages</a>
+            <a class="btn" href="#features">Explore features</a>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:12px;align-items:center;font-size:0.95rem;color:var(--muted)">
+            <div>Version <strong>1.0</strong></div>
+            <div style="padding-left:10px;border-left:1px solid rgba(255,255,255,0.03)">License: MIT</div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin-top:0">Quick setup</h3>
+          <ol style="margin:8px 0 0 18px;color:var(--muted)">
+            <li>Clone this repo to your machine.</li>
+            <li>Edit <code>index.html</code> and replace content.</li>
+            <li>Commit & push to <code>main</code> branch.</li>
+            <li>Enable GitHub Pages in repository settings.</li>
+          </ol>
+
+          <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:14px 0">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="muted" style="font-size:0.85rem">Primary stack</div>
+              <strong>HTML • CSS • JS</strong>
+            </div>
+            <div>
+              <div class="muted" style="font-size:0.85rem;text-align:right">Deploy</div>
+              <div style="font-weight:700">GitHub Pages</div>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="features" style="margin-top:28px">
+        <h2 style="margin:0 0 8px">Features</h2>
+        <p class="muted" style="margin:0 0 18px">A compact set of helpful building blocks to get your site live quickly.</p>
+
+        <div class="features">
+          <div class="card feature">
+            <h3>Responsive layout</h3>
+            <p>Looks great on phones, tablets, and desktops — built with fluid widths and CSS grid.</p>
+          </div>
+          <div class="card feature">
+            <h3>Accessible markup</h3>
+            <p>Semantic HTML and clear focus states make it easier for everyone to use.</p>
+          </div>
+          <div class="card feature">
+            <h3>Deploy-ready</h3>
+            <p>Drop into a GitHub Pages repo and you have a live website without additional tooling.</p>
+          </div>
+          <div class="card feature">
+            <h3>Easy to customize</h3>
+            <p>Single-file starter — edit, extend, or migrate to frameworks like Next.js whenever you want.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" style="margin-top:32px">
+        <h2 style="margin-bottom:6px">About this template</h2>
+        <p class="muted">This is intentionally small and dependency-free. If you want a version with a build tool (Vite, Next.js) or a CMS (Netlify, Cloudflare Pages), I can provide starter templates for those too.</p>
+      </section>
+
+      <section id="contact" style="margin-top:28px">
+        <h2>Contact</h2>
+        <p class="muted">Questions or want help customizing? Leave a message below — this is a non-functional example form; replace the <code>action</code> with your endpoint.</p>
+
+        <form class="card" action="#" onsubmit="event.preventDefault();alert('Replace form action with your endpoint');" style="margin-top:12px;display:grid;gap:10px">
+          <label>
+            <div style="font-weight:700;margin-bottom:6px">Name</div>
+            <input required name="name" placeholder="Your name" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          </label>
+          <label>
+            <div style="font-weight:700;margin-bottom:6px">Email</div>
+            <input required type="email" name="email" placeholder="you@example.com" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit">
+          </label>
+          <label>
+            <div style="font-weight:700;margin-bottom:6px">Message</div>
+            <textarea required name="message" rows="4" placeholder="How can we help?" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit"></textarea>
+          </label>
+          <div style="display:flex;justify-content:flex-end">
+            <button class="btn primary" type="submit">Send Message</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <div class="muted">© <span id="year"></span> Vidhana. All rights reserved.</div>
+      <div class="muted">Built for GitHub Pages • <span class="kbd">index.html</span></div>
+    </footer>
+  </div>
+
+  <script>
+    // small niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // keyboard hint: press 'g' then 'f' to jump to features (helpful when demoing)
+    let buffer = '';
+    window.addEventListener('keydown', e => {
+      buffer += e.key;
+      if(buffer.endsWith('gf')){
+        document.getElementById('features').scrollIntoView({behavior:'smooth'});
+        buffer = '';
+      }
+      if(buffer.length>5) buffer = buffer.slice(-5);
+    });
+  </script>
+</body>
+</html>
